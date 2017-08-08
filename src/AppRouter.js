@@ -2,8 +2,8 @@ var AppStorage = function(__routes) {
 	var __this = {
 		routes: {}
 		,init: function() {
-			if (typeof _routes != undefined) {
-				__this.routes = _routes;
+			if (typeof __routes != undefined) {
+				__this.routes = __routes;
 			}
 			for (var _name in __this.routes) {
 				if (__this.routes.hasOwnProperty(_name)) {
