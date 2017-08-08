@@ -1,4 +1,4 @@
-var AppStorage = function(__routes) {
+var AppRouter = function(__routes) {
 	var __this = {
 		routes: {}
 		,init: function() {
