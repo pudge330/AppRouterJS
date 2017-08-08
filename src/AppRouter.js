@@ -52,8 +52,10 @@ var AppStorage = function(__routes) {
 					_slugMatch = '\\{' + _slugMatches[i] + '\\}';
 					if (typeof _defaults[_slugMatches[i]] != 'undefined') {
 						_route.defaultSlugs.push(_defaults[_slugMatches[i]]);
-						_tmpRegex = '(?:\\/' + _tmpRegex + '|\\/)?';
-						_slugMatch = '\\/' + _slugMatch;
+						if (i == _slugMatches.length - 1) {
+							_tmpRegex = '(?:\\/' + _tmpRegex + '|\\/)?';
+							_slugMatch = '\\/' + _slugMatch;
+						}
 						delete _route.defaults[_slugMatches[i]];
 					}
 					else {
