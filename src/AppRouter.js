@@ -28,6 +28,11 @@ var AppRouter = function(__routes) {
 		}
 		,setRoutes: function(_routes) {
 			__this.routes = _routes;
+			for (var _name in __this.routes) {
+				if (__this.routes.hasOwnProperty(_name)) {
+					__this.routes[_name] = __this.processNewRoute(__this.routes[_name]);
+				}
+			}
 		}
 		,processNewRoute: function(_route) {
 			if (typeof _route.defaults == 'undefined')
@@ -71,7 +76,6 @@ var AppRouter = function(__routes) {
 				}
 			}
 			_pattern = '^' + _pattern + '$';
-			// console.log('Regex: ' + _pattern);
 			return new RegExp(_pattern);
 		}
 		,regexEscape: function(_string) {
