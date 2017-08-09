@@ -139,7 +139,7 @@ if (match) {
 Adding a route with addtional requirements on the slug(s)
 
 ```javascript
-_router.addRoute('shop_department_item_categories', {
+_router.addRoute('shop_department_item_details', {
 	pattern: '/shop/{department}/{category}/{itemId}'
 	,action: 'shopDepartmentCategoriesPage'
 	,requirements: {
