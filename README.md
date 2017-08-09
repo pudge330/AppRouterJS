@@ -150,7 +150,7 @@ _router.addRoute('shop_department_item_details', {
 	}
 });
 
-//--url without optional slug
+//--example 1
 var match = _router.match('/shop/electronics/car/437');
 if (match) {
 	//--do something here with match object
@@ -166,7 +166,7 @@ if (match) {
 	//  }
 }
 
-//--url with optional slug
+//--example 2
 var match = _router.match('/shop/home-and-office/supplies/573');
 if (match) {
 	//--do something here with match object
