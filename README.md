@@ -59,7 +59,7 @@ if (match) {
 
 ## Examples
 
-Adding another `routes` object after one has been set either in the constructor or by passing it into `setRoutes`.
+Adding another `routes` object after one has already been set either in the constructor or by passing it into `setRoutes`.
 
 ```javascript
 var _routes2 = {
@@ -73,10 +73,11 @@ var _routes2 = {
 	}
 };
 
+//--merges routes into route collection
 _router.addRoutes(_routes2);
 ```
 
-Adding a one single route.
+Adding one single route.
 
 ```javascript
 _router.addRoute('sales', {
@@ -85,7 +86,7 @@ _router.addRoute('sales', {
 });
 ```
 
-Adding a one single route with a callback as the action.
+Adding one single route with a callback as the action.
 
 ```javascript
 _router.addRoute('sales', {pattern: '/sales'}, function() {
@@ -135,7 +136,7 @@ if (match) {
 }
 ```
 
-Adding a route with addtional requirements on the slug
+Adding a route with addtional requirements on the slug(s)
 
 ```javascript
 _router.addRoute('shop_department_item_categories', {
