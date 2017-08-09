@@ -160,7 +160,7 @@ if (match) {
 	//  	,slugs: {
 	//  		department: 'electronics'
 	//  		,category: 'car'
-	//  		,itemId: 437
+	//  		,itemId: '437'
 	//  	}
 	//  	,defaults: {}
 	//  }
@@ -176,7 +176,7 @@ if (match) {
 	//  	,slugs: {
 	//  		department: 'home-and-office'
 	//  		,category: 'supplies'
-	//  		,itemId: 573
+	//  		,itemId: '573'
 	//  	}
 	//  	,defaults: {}
 	//  }
