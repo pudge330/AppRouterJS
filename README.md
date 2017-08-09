@@ -18,15 +18,18 @@ Download and add `AppRouter` to your project.
 Instantiate new instance of `AppRouter`. You can optionally pass in the `routes` object as the first and only argument to the constructor.
 
 ```javascript
-//--without routes passed into the constructor
-var _router = new AppRouter();
-
-//--with routes passed into the constructor
+//--routes object
 var _routes = {
 	home: {
 		pattern: '/'
 		,action: 'homePage'
 	}
 };
+
+//--without routes passed into the constructor
+var _router = new AppRouter();
+_router.setRoutes(_routes);
+
+//--with routes passed into the constructor
 var _router = new AppRouter(_routes);
 ```
