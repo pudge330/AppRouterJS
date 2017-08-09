@@ -24,6 +24,9 @@ var _routes = {
 		pattern: '/'
 		,action: 'homePage'
 	}
+	,services: {
+		pattern: '/shop/{department}'
+	}
 };
 
 //--without routes passed into the constructor
@@ -33,4 +36,14 @@ _router.setRoutes(_routes);
 
 //--with routes passed into the constructor
 var _router = new AppRouter(_routes);
+```
+
+Matching a url.
+
+```javascript
+var match = _router.match('/shop/electronics');
+
+if (match) {
+	//--do something here with match object
+}
 ```

@@ -40,10 +40,10 @@ var AppRouter = function(__routes) {
 			if (typeof _route.requirements == 'undefined')
 				_route.requirements = {};
 			_route.defaultSlugs = [];
-			_route.compiledRegex = __this.compilePatternRegex(_route, _route.pattern, _route.defaults, _route.requirements);
+			_route.compiledRegex = __this.compileRoute(_route, _route.pattern, _route.defaults, _route.requirements);
 			return _route;
 		}
-		,compilePatternRegex: function(_route, _pattern, _defaults, _requirements) {
+		,compileRoute: function(_route, _pattern, _defaults, _requirements) {
 			var _slugMatches = _pattern.match(/({([^\/{}]+)})/g);
 			var _regexes = {};
 			if (_slugMatches) {
