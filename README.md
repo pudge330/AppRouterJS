@@ -17,7 +17,7 @@ Download and add `AppRouter` to your project.
 
 Instantiate new instance of `AppRouter`. You can optionally pass in the `routes` object as the first and only argument to the constructor.
 
-```script
+```javascript
 //--without routes passed into the constructor
 var _router = new AppRouter();
 
