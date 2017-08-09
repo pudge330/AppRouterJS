@@ -139,6 +139,7 @@ if (match) {
 Adding a route with additional requirements on the slug(s)
 
 ```javascript
+//--requirements are standard regex strings
 _router.addRoute('shop_department_item_details', {
 	pattern: '/shop/{department}/{category}/{itemId}'
 	,action: 'shopDepartmentCategoriesPage'
