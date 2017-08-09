@@ -94,7 +94,7 @@ _router.addRoute('sales', {pattern: '/sales'}, function() {
 });
 ```
 
-Adding a route with a optional trailing slug
+Adding a route with an optional trailing slug
 
 ```javascript
 _router.addRoute('shop_department_item_categories', {
