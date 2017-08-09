@@ -136,7 +136,7 @@ if (match) {
 }
 ```
 
-Adding a route with addtional requirements on the slug(s)
+Adding a route with additional requirements on the slug(s)
 
 ```javascript
 _router.addRoute('shop_department_item_details', {
