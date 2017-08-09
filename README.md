@@ -77,7 +77,7 @@ var _routes2 = {
 _router.addRoutes(_routes2);
 ```
 
-Adding one single route.
+Adding a single route.
 
 ```javascript
 _router.addRoute('sales', {
@@ -86,7 +86,7 @@ _router.addRoute('sales', {
 });
 ```
 
-Adding one single route with a callback as the action.
+Adding a single route with a callback as the action.
 
 ```javascript
 _router.addRoute('sales', {pattern: '/sales'}, function() {
