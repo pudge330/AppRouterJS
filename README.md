@@ -28,6 +28,7 @@ var _routes = {
 
 //--without routes passed into the constructor
 var _router = new AppRouter();
+//...code
 _router.setRoutes(_routes);
 
 //--with routes passed into the constructor
