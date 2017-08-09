@@ -15,7 +15,7 @@ Download and add `AppRouter` to your project.
 <script src="/scripts/AppRouter.min.js" type="text/javascript"></script>
 ```
 
-Instantiate new instance of `AppRouter`. You can optionally pass in the `routes` object as the first and only argument to the constructor.
+Instantiate new instance of `AppRouter`. You can optionally pass in the `routes` object as the first and only argument to the constructor or add them later on after the router has been created.
 
 ```javascript
 //--routes object
