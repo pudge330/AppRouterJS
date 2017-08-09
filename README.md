@@ -26,6 +26,7 @@ var _routes = {
 	}
 	,services: {
 		pattern: '/shop/{department}'
+		action: 'shopPage'
 	}
 };
 
@@ -45,5 +46,13 @@ var match = _router.match('/shop/electronics');
 
 if (match) {
 	//--do something here with match object
+	//--match object
+	//  {
+	//  	action: 'shopPage'
+	//  	,slugs: {
+	//  		department: 'electronics'
+	//  	}
+	//  	,defaults: {}
+	//  }
 }
 ```
