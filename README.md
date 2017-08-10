@@ -189,9 +189,6 @@ if (match) {
 
 ## Functions
 
-**constructor(__routes)** - Instantiates a new instance of `AppRouter`
-  * ____routes__ - *object* - Object defining routes
-
 **setRoutes(_routes)** - Sets and processes the `routes` object
   * ___routes__ - *object* - The `routes` object
 
