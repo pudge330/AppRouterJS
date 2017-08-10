@@ -192,7 +192,7 @@ if (match) {
 **setRoutes(_routes)** - Sets and processes a `routes` object
   * ___routes__ - *object* - The `routes` object
 
-**addRoutes**(_name, _opts, _action)** - Add a single route
+**addRoutes(_name, _opts, _action)** - Add a single route
   * ___name__ - *string* - The name/key of the route
   * ___opts__ - *object* - The routes configuration/options
   * ___action__ - *mixed* - Optional - A callable function or a string value function name
