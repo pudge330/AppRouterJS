@@ -2,7 +2,7 @@
 
 Symfony like router for javascript. Uses bracket style slugs eg. `{blogId}`, supports default vaules for optional slugs (last one only) and addtional requirements via a regex string.
 
-* Under 3kb minified
+* Under 2kb minified
 * No dependencies
 * Works without jQuery
 * Simple and easy to use
