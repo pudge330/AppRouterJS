@@ -70,7 +70,15 @@ var AppRouter = function(__routes) {
 		}
 	};
 	var __this = {
-		addRoute: function(_name, _opts, _action) {
+		setRoutes: function(_routes) {
+			__priv.routes = _routes;
+			for (var _name in __priv.routes) {
+				if (__priv.routes.hasOwnProperty(_name)) {
+					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
+				}
+			}
+		}
+		,addRoute: function(_name, _opts, _action) {
 			__priv.routes[_name] = _opts;
 			if (typeof _action != 'undefined') {
 				__priv.routes[_name].action = _action;
@@ -81,14 +89,6 @@ var AppRouter = function(__routes) {
 			for (var _name in _routes) {
 				if (_routes.hasOwnProperty(_name)) {
 					__priv.routes[_name] = _routes[_name];
-					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
-				}
-			}
-		}
-		,setRoutes: function(_routes) {
-			__priv.routes = _routes;
-			for (var _name in __priv.routes) {
-				if (__priv.routes.hasOwnProperty(_name)) {
 					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
 				}
 			}

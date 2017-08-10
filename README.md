@@ -220,10 +220,16 @@ if (match) {
 
 ## Functions
 
-**setRoutes(_routes)** - Sets and processes a `routes` object
+**setRoutes(_routes)** - Sets a `routes` object
   * ___routes__ - *object* - The `routes` object
 
-**addRoutes(_name, _opts, _action)** - Add a single route
+**addRoute(_name, _opts, _action)** - Add a single route
   * ___name__ - *string* - The name/key of the route
   * ___opts__ - *object* - The routes configuration/options
   * ___action__ - *mixed* - Optional - A callable function or a string value function name
+
+**addRoutes(_routes)** - Adds/merges a `routes` object into the existing collection
+  * ___routes__ - *object* - The `routes` object
+
+**match(_url)** - Attempts to match a url. On success it returns an object with the action, slugs (object and array) and any default valuees from the configuration
+  * ___url__ - *string* - The url to match
