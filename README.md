@@ -231,5 +231,5 @@ if (match) {
 **addRoutes(_routes)** - Adds/merges a `routes` object into the existing collection
   * ___routes__ - *object* - The `routes` object
 
-**match(_url)** - Attempts to match a url. On success it returns an object with the action, slugs (object and array) and any default valuees from the configuration
+**match(_url)** - Attempts to match a url. On success it returns an object with the action, slugs (object and array) and any default values from the configuration
   * ___url__ - *string* - The url to match
