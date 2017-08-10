@@ -20,14 +20,14 @@ Instantiate new instance of `AppRouter`. You can optionally pass in the `routes`
 ```javascript
 //--routes object
 var _routes = {
-	home: {
-		pattern: '/'
-		,action: 'homePage'
-	}
-	,services: {
-		pattern: '/shop/{department}'
-		action: 'shopPage'
-	}
+  home: {
+    pattern: '/'
+    ,action: 'homePage'
+  }
+  ,services: {
+    pattern: '/shop/{department}'
+    ,action: 'shopPage'
+  }
 };
 
 //--without routes passed into the constructor
@@ -183,7 +183,19 @@ if (match) {
 }
 ```
 
+## Constructor
+
+## Route objects
+
 ## Functions
 
 **constructor(__routes)** - Instantiates a new instance of `AppRouter`
   * ____routes__ - *object* - Object defining routes
+
+**setRoutes(_routes)** - Sets and processes the `routes` object
+  * ___routes__ - *object* - The `routes` object
+
+**addRoutes**(_name, _opts, _action)** - Add a single route
+  * ___name__ - *string* - The name/key of the route
+  * ___opts__ - *object* - The routes configuration/options
+  * ___action__ - *mixed* - Optional - A callable function or a string value function name

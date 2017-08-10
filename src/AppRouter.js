@@ -1,36 +1,13 @@
 var AppRouter = function(__routes) {
-	var __this = {
+	var __priv = {
 		routes: {}
 		,init: function() {
 			if (typeof __routes != undefined) {
-				__this.routes = __routes;
+				__priv.routes = __routes;
 			}
-			for (var _name in __this.routes) {
-				if (__this.routes.hasOwnProperty(_name)) {
-					__this.routes[_name] = __this.processNewRoute(__this.routes[_name]);
-				}
-			}
-		}
-		,addRoute: function(_name, _opts, _action) {
-			__this.routes[_name] = _opts;
-			if (typeof _action != 'undefined') {
-				__this.routes[_name].action = _action;
-			}
-			__this.routes[_name] = __this.processNewRoute(__this.routes[_name]);
-		}
-		,addRoutes: function(_routes) {
-			for (var _name in _routes) {
-				if (_routes.hasOwnProperty(_name)) {
-					__this.routes[_name] = _routes[_name];
-					__this.routes[_name] = __this.processNewRoute(__this.routes[_name]);
-				}
-			}
-		}
-		,setRoutes: function(_routes) {
-			__this.routes = _routes;
-			for (var _name in __this.routes) {
-				if (__this.routes.hasOwnProperty(_name)) {
-					__this.routes[_name] = __this.processNewRoute(__this.routes[_name]);
+			for (var _name in __priv.routes) {
+				if (__priv.routes.hasOwnProperty(_name)) {
+					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
 				}
 			}
 		}
@@ -40,7 +17,7 @@ var AppRouter = function(__routes) {
 			if (typeof _route.requirements == 'undefined')
 				_route.requirements = {};
 			_route.defaultSlugs = [];
-			_route.compiledRegex = __this.compileRoute(_route, _route.pattern, _route.defaults, _route.requirements);
+			_route.compiledRegex = __priv.compileRoute(_route, _route.pattern, _route.defaults, _route.requirements);
 			return _route;
 		}
 		,compileRoute: function(_route, _pattern, _defaults, _requirements) {
@@ -69,7 +46,7 @@ var AppRouter = function(__routes) {
 					_regexes[_slugMatch] = _tmpRegex;
 				}
 			}
-			_pattern = __this.regexEscape(_pattern)
+			_pattern = __priv.regexEscape(_pattern)
 			for (var _slug in _regexes) {
 				if (_regexes.hasOwnProperty(_slug)) {
 					_pattern = _pattern.replace(_slug, _regexes[_slug]);
@@ -81,28 +58,7 @@ var AppRouter = function(__routes) {
 		,regexEscape: function(_string) {
 			return _string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 		}
-		,match: function(_url) {
-			for (var _name in __this.routes) {
-				if (__this.routes.hasOwnProperty(_name)) {
-					var _urlMatches = _url.match(__this.routes[_name].compiledRegex);
-					if (_urlMatches) {
-						var _slugs = __this.routes[_name].defaultSlugs.slice();
-						for (var i = 0; i < _slugs.length; i++) {
-							if (typeof _urlMatches[i + 1] != 'undefined') {
-								_slugs[i] = _urlMatches[i + 1];
-							}
-						}
-						return {
-							action: __this.routes[_name].action
-							,slugs: _slugs
-							,defaults: __this.cloneObject(__this.routes[_name].defaults)
-						};
-					}
-				}
-			}
-			return null;
-		},
-		cloneObject: function(_obj) {
+		,cloneObject: function(_obj) {
 			if (null == _obj || "object" != typeof _obj)
 				return _obj;
 			var copy = _obj.constructor();
@@ -113,6 +69,52 @@ var AppRouter = function(__routes) {
 			return copy;
 		}
 	};
-	__this.init();
+	var __this = {
+		addRoute: function(_name, _opts, _action) {
+			__priv.routes[_name] = _opts;
+			if (typeof _action != 'undefined') {
+				__priv.routes[_name].action = _action;
+			}
+			__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
+		}
+		,addRoutes: function(_routes) {
+			for (var _name in _routes) {
+				if (_routes.hasOwnProperty(_name)) {
+					__priv.routes[_name] = _routes[_name];
+					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
+				}
+			}
+		}
+		,setRoutes: function(_routes) {
+			__priv.routes = _routes;
+			for (var _name in __priv.routes) {
+				if (__priv.routes.hasOwnProperty(_name)) {
+					__priv.routes[_name] = __priv.processNewRoute(__priv.routes[_name]);
+				}
+			}
+		}
+		,match: function(_url) {
+			for (var _name in __priv.routes) {
+				if (__priv.routes.hasOwnProperty(_name)) {
+					var _urlMatches = _url.match(__priv.routes[_name].compiledRegex);
+					if (_urlMatches) {
+						var _slugs = __priv.routes[_name].defaultSlugs.slice();
+						for (var i = 0; i < _slugs.length; i++) {
+							if (typeof _urlMatches[i + 1] != 'undefined') {
+								_slugs[i] = _urlMatches[i + 1];
+							}
+						}
+						return {
+							action: __priv.routes[_name].action
+							,slugs: _slugs
+							,defaults: __this.cloneObject(__priv.routes[_name].defaults)
+						};
+					}
+				}
+			}
+			return null;
+		}
+	};
+	__priv.init();
 	return __this;
 };
