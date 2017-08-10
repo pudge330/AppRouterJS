@@ -41,7 +41,7 @@ var AppRouter = function(__routes) {
 						_route.defaultSlugs.obj[_slugMatches[i]] = _defaults[_slugMatches[i]];
 						_route.defaultSlugs.arr.push(_defaults[_slugMatches[i]]);
 						if (i == _slugMatches.length - 1) {
-							_tmpRegex = '(?:\\/' + _tmpRegex + '|\\/)?';
+							_tmpRegex = '(?:\\/' + _tmpRegex + ')?';
 							_slugMatch = '\\/' + _slugMatch;
 						}
 						delete _route.defaults[_slugMatches[i]];
@@ -108,7 +108,6 @@ var AppRouter = function(__routes) {
 			for (var _name in __priv.routes) {
 				if (__priv.routes.hasOwnProperty(_name)) {
 					var _urlMatches = _url.match(__priv.routes[_name].compiledRegex);
-					console.log(__priv.routes[_name].compiledRegex);
 					if (_urlMatches) {
 						var _slugs = {
 							obj: __priv.cloneObject(__priv.routes[_name].defaultSlugs.obj)
