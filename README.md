@@ -182,3 +182,8 @@ if (match) {
 	//  }
 }
 ```
+
+## Functions
+
+**constructor(__routes)** - Instantiates a new instance of `AppRouter`
+  * ____routes__ - *object* - Object defining routes
