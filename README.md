@@ -189,7 +189,7 @@ if (match) {
 
 ## Functions
 
-**setRoutes(_routes)** - Sets and processes the `routes` object
+**setRoutes(_routes)** - Sets and processes a `routes` object
   * ___routes__ - *object* - The `routes` object
 
 **addRoutes**(_name, _opts, _action)** - Add a single route
