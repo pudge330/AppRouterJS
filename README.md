@@ -50,7 +50,12 @@ if (match) {
   //  {
   //    action: 'shopPage'
   //    ,slugs: {
-  //      department: 'electronics'
+  //      arr: [
+  //        'electronics'
+  //      ]
+  //      ,obj: {
+  //        department: 'electronics'
+  //      }
   //    }
   //    ,defaults: {}
   //  }
@@ -113,8 +118,14 @@ if (match) {
   //  {
   //    action: 'shopDepartmentCategoriesPage'
   //    ,slugs: {
-  //      department: 'home-and-office'
-  //      ,category: 'list'
+  //      arr: [
+  //        'home-and-office'
+  //        ,'list'
+  //      ]
+  //      ,obj: {
+  //        department: 'home-and-office'
+  //        ,category: 'list'
+  //      }
   //    }
   //    ,defaults: {}
   //  }
@@ -128,8 +139,14 @@ if (match) {
   //  {
   //    action: 'shopDepartmentCategoriesPage'
   //    ,slugs: {
-  //      department: 'home-and-office'
-  //      ,category: 'supplies'
+  //      arr: [
+  //        'home-and-office'
+  //        ,'supplies'
+  //      ]
+  //      ,obj: {
+  //        department: 'home-and-office'
+  //        ,category: 'supplies'
+  //      }
   //    }
   //    ,defaults: {}
   //  }
@@ -158,9 +175,16 @@ if (match) {
   //  {
   //    action: 'shopDepartmentItemsDetailsPage'
   //    ,slugs: {
-  //      department: 'electronics'
-  //      ,category: 'car'
-  //      ,itemId: '437'
+  //      arr: [
+  //        'electronics'
+  //        ,'car'
+  //        ,'437'
+  //      ]
+  //      ,obj: {
+  //        department: 'electronics'
+  //        ,category: 'car'
+  //        ,itemId: '437'
+  //      }
   //    }
   //    ,defaults: {}
   //  }
@@ -174,9 +198,16 @@ if (match) {
   //  {
   //    action: 'shopDepartmentItemsDetailsPage'
   //    ,slugs: {
-  //      department: 'home-and-office'
-  //      ,category: 'supplies'
-  //      ,itemId: '573'
+  //      arr: [
+  //        'home-and-office'
+  //        ,'supplies'
+  //        ,'573'
+  //      ]
+  //      ,obj: {
+  //        department: 'home-and-office'
+  //        ,category: 'supplies'
+  //        ,itemId: '573'
+  //      }
   //    }
   //    ,defaults: {}
   //  }
