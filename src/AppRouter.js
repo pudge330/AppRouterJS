@@ -22,7 +22,6 @@ var AppRouter = function(__routes) {
 				_route.pattern = '/';
 			}
 			_route = __priv.compileRoute(_route);
-			clog(_route);
 			return _route;
 		}
 		,compileRoute: function(_route) {
