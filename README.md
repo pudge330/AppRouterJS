@@ -233,46 +233,46 @@ Routes have 4 properties.
 ```javascript
 
 var _routes = {
-	//--standard
-	home: {
-		pattern: '/'
-		,action: 'homePage'
-	}
-	blogHome: {
-		pattern: '/blog'
-		,action: 'blogHomePage'
-	}
+  //--standard
+  home: {
+    pattern: '/'
+    ,action: 'homePage'
+  }
+  blogHome: {
+    pattern: '/blog'
+    ,action: 'blogHomePage'
+  }
 
-	//--with slugs
-	blogCategoryListing: {
-		pattern: '/blog/{category}'
-		,action: 'blogHomePage'
-	}
+  //--with slugs
+  blogCategoryListing: {
+    pattern: '/blog/{category}'
+    ,action: 'blogHomePage'
+  }
 
-	//--with default values
-	blogArticleDetails: {
-		pattern: '/blog/{category}/{articleSlug}/{articleId}'
-		,action: 'blogHomePage'
-		,defaults: {
-			articleId: 'newest' //--default for articleId
-			,format: 'html' //--will be passed on if matched
-		}
-	}
+  //--with default values
+  blogArticleDetails: {
+    pattern: '/blog/{category}/{articleSlug}/{articleId}'
+    ,action: 'blogHomePage'
+    ,defaults: {
+      articleId: 'newest' //--default for articleId
+      ,format: 'html' //--will be passed on if matched
+    }
+  }
 
-	//--with default values and requirements
-	blogArticleDetails: {
-		pattern: '/blog/{category}/{articleSlug}/{articleId}'
-		,action: 'blogHomePage'
-		,defaults: {
-			articleId: 'newest' //--default for articleId
-			,format: 'html' //--will be passed on if matched
-		}
-		,requirements: {
-			category: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
-			,articleSlug: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
-			,articleId: '\\d+|newest|first|last-updated|trending' //--number or one of [newest|first|last-updated|trending]
-		}
-	}
+  //--with default values and requirements
+  blogArticleDetails: {
+    pattern: '/blog/{category}/{articleSlug}/{articleId}'
+    ,action: 'blogHomePage'
+    ,defaults: {
+      articleId: 'newest' //--default for articleId
+      ,format: 'html' //--will be passed on if matched
+    }
+    ,requirements: {
+      category: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
+      ,articleSlug: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
+      ,articleId: '\\d+|newest|first|last-updated|trending' //--number or one of [newest|first|last-updated|trending]
+    }
+  }
 };
 ```
 
