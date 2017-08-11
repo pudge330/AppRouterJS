@@ -216,7 +216,7 @@ if (match) {
 
 ## Constructor
 
-AppRouter's constructor takes 1 optional argument '_routes' which is a routes object.
+AppRouter's constructor takes 1 optional argument `_routes` which is a routes object.
 
 ## Route objects
 
