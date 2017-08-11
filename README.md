@@ -224,7 +224,7 @@ Routes have 4 properties.
 
 * __name__ - _string_ - The name of the route. This will be the route object's property name for the route or the first parameter in `addRoute`
 * __pattern__ - _string_ - The url pattern
-* __action__ - _mixed_[string|function] - The urls action. Either a function/action name or a funtion
+* __action__ - _mixed[string|function]_ - The urls action. Either a function/action name or a funtion
 * __defaults__ - _object_ - Default values, used for optional slugs and passing extra data on after a match
 * __requirements__ - _object_ - Requriements for the slugs. Key value pairs consisting of a slug name as the property name and the regex string as the value
 
