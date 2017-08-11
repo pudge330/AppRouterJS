@@ -159,7 +159,7 @@ Adding a route with additional requirements on the slug(s)
 //--requirements are standard regex strings
 _router.addRoute('shop_department_item_details', {
   pattern: '/shop/{department}/{category}/{itemId}'
-  ,action: 'shopDepartmentCategoriesPage'
+  ,action: 'shopDepartmentItemsDetailsPage'
   ,requirements: {
     department: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
     ,category: '[a-zA-Z0-9-_]+' //--alphanumeric, hyphen and dashes only
@@ -215,6 +215,8 @@ if (match) {
 ```
 
 ## Constructor
+
+AppRouter's constructor takes 1 optional argument '_routes'
 
 ## Route objects
 

@@ -21,10 +21,12 @@ var AppRouter = function(__routes) {
 			if (_route.pattern == '') {
 				_route.pattern = '/';
 			}
-			_route.compiledRegex = __priv.compileRoute(_route, _route.pattern, _route.defaults, _route.requirements);
+			_route = __priv.compileRoute(_route);
+			clog(_route);
 			return _route;
 		}
-		,compileRoute: function(_route, _pattern, _defaults, _requirements) {
+		,compileRoute: function(_route) {
+			var _pattern = _route.pattern;
 			var _slugMatches = _pattern.match(/({([^\/{}]+)})/g);
 			var _regexes = {};
 			if (_slugMatches) {
@@ -32,14 +34,14 @@ var AppRouter = function(__routes) {
 					_slugMatch = _slugMatches[i];
 					_slugMatches[i] = _slugMatches[i].replace(/^({)|(})$/g, '');
 					var _tmpRegex = '([^\\/?#]+)';
-					if (typeof _requirements[_slugMatches[i]] != 'undefined') {
-						_tmpRegex = '(' + _requirements[_slugMatches[i]] + ')';
+					if (typeof _route.requirements[_slugMatches[i]] != 'undefined') {
+						_tmpRegex = '(' + _route.requirements[_slugMatches[i]] + ')';
 					}
 					_slugMatch = '\\{' + _slugMatches[i] + '\\}';
 					_route.defaultSlugs.keys.push(_slugMatches[i]);
-					if (typeof _defaults[_slugMatches[i]] != 'undefined') {
-						_route.defaultSlugs.obj[_slugMatches[i]] = _defaults[_slugMatches[i]];
-						_route.defaultSlugs.arr.push(_defaults[_slugMatches[i]]);
+					if (typeof _route.defaults[_slugMatches[i]] != 'undefined') {
+						_route.defaultSlugs.obj[_slugMatches[i]] = _route.defaults[_slugMatches[i]];
+						_route.defaultSlugs.arr.push(_route.defaults[_slugMatches[i]]);
 						if (i == _slugMatches.length - 1) {
 							_tmpRegex = '(?:\\/' + _tmpRegex + ')?';
 							_slugMatch = '\\/' + _slugMatch;
@@ -60,7 +62,8 @@ var AppRouter = function(__routes) {
 				}
 			}
 			_pattern = '^' + _pattern + '$';
-			return new RegExp(_pattern);
+			_route.compiledRegex = new RegExp(_pattern);
+			return _route;
 		}
 		,regexEscape: function(_string) {
 			return _string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
